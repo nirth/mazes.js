@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node --require babel-register --require babel-polyfill tools/dev/start.babel.js",
-    "test": "node --require babel-polyfill node_modules/karma/bin/karma start ./karma.babel.js"
+    "test": "node_modules/.bin/mocha ./src/**/*.spec.js --require babel-register --require babel-polyfill",
+    "karma": "node --require babel-polyfill node_modules/karma/bin/karma start ./karma.babel.js"
   },
   "author": "David Sergey <me@davidsergey.com> (https://davidsergey.com)",
   "license": "MIT",
