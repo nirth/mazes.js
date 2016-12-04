@@ -6,13 +6,7 @@ export const unfold = (fun, seed) => {
     // Undefined result indicates end of unfolding.
     if (result === undefined) return accumulator;
 
-    let nextSeed
-    let product;
-    if (Array.isArray(result)) {
-      [nextSeed, product] = result;
-    } else {
-      nextSeed = product = result;
-    }
+    const [nextSeed, product] = result;
 
     return go(nextSeed, accumulator.concat([product]));
   };
